@@ -13,7 +13,7 @@ class UserController {
   public function listarUser() {
     //Comprueba si el usuario esta registrado.
     if(IDUSER) {
-      $eval = "SELECT nombre,apellidos,email,telefono,imgSrc FROM users";
+      $eval = "SELECT id,nombre,apellidos,email,telefono,imgSrc FROM users";
       $peticion = $this->db->prepare($eval);
       $peticion->execute();
       $resultado = $peticion->fetchAll(PDO::FETCH_OBJ);
